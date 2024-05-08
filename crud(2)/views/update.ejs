@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+</head>
+<body style="background-color: antiquewhite;">
+    <h1>User Information Form</h1>
+    
+    <form method="post" action="/update/<%= user.id %>">
+        <!-- Name Input -->
+        <label for="name">Name:</label>
+        <input value="<%= user.name %>" type="text" id="name" name="name" required>
+        <br>
+
+        <!-- Age Input -->
+        <label for="age">Age:</label>
+        <input value="<%= user.age %>" type="number" id="age" name="age" required>
+        <br>
+
+        <!-- City Input -->
+        <label for="city">City:</label>
+        <input value="<%= user.city %>" type="text" id="city" name="city" required>
+        <br>
+
+        <!-- Mobile Number Input -->
+        <label for="mobile">Mobile Number:</label>
+        <input value="<%= user.mobile %>" type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        <small>Format: 10 digits without spaces or dashes</small>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

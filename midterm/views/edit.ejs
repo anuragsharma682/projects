@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/formStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="main">
+
+        <% console.log(item.brand); %>
+
+        <form method="post" action="/mobile-phone/<%= item.id %>/edit">
+            <label for="brand">brand</label>
+            <input type="text" name="brand"required="true" value="<%= item.brand %>">
+            <label for="model">model</label>
+            <input type="text" name="model" value="<%= item.model %>">
+            <label for="operatingsystem">operatingsystem</label>
+            <input type="text" name="operatingsystem" value="<%= item.operatingsystem %>">
+            <label for="capacity">capacity</label>
+            <input type="number" name="capacity" value="<%= item.capacity %>" readonly="true">
+            <label for="releasedate">releasedate</label>
+            <input type="number" name="releasedate" value="<%= item.releasedate %>">
+            <button>submit</button>
+
+        </form>
+
+
+    </div>
+
+
+</body>
+</html>

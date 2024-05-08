@@ -1,0 +1,27 @@
+<div class="row margin-form">
+    <div class="col-6 mx-auto">
+        <form action="/bike/<%=foundBike._id%>?_method=PATCH" method="POST">
+            <div class="mb-3">
+                <label for="Company" class="form-label">Company: </label>
+                <input type="text" class="form-control" name="Company" id="Company" placeholder="Name of Product" value="<%=foundBike.Company%>">
+            </div>
+            <div class="mb-3">
+                <label for="paisa" class="form-label">Price: </label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Rs. </span>
+                    <input class="form-control" type="number" name="price" id="paisa" placeholder="Price of Product" value="<%=foundBike.price%>">
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <label for="Mileage" class="form-label">Mileage: </label>
+                <input class="form-control" type="number" name="Mileage" id="Mileage" placeholder="Mileage" value="<%=foundBike.Mileage%>">
+            </div>
+            <div class="mb-3">
+                <label for="Power" class="form-label">Power: </label>
+                <textarea class="form-control"  name="Power" id="Power" rows="5" placeholder="Description of Product"><%=foundBike.Power%></textarea>
+            </div>
+            <button type="submit" class="btn btn-sm btn-success">Save Changes</button>
+        </form>
+    </div>
+</div>

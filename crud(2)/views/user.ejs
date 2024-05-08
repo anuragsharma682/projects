@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js CRUD App</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+    li{
+        border:  2px solid red;
+        border-radius: 5px;
+        margin: 20px;
+        padding: 10px;
+    }
+    button{
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: green;
+        color: white;
+    }
+</style>
+<body style="background-color: antiquewhite;">
+    <h1>Home Page</h1>
+
+    <div class="container">
+        <ul>
+            <% data.forEach(user => { %>
+                <li>
+                    <strong>ID:</strong> <%= user.id %><br>
+                    <strong>Name:</strong> <%= user.name %><br>
+                    <strong>Age:</strong> <%= user.age %><br>
+                    <strong>City:</strong> <%= user.city %><br>
+                    <strong>Mobile:</strong> <%= user.mobile %><br>
+    
+                    <!-- Button to Edit User -->
+                    <a href="/update/<%= user.id %>">
+                        <button>Edit</button>
+                    </a>
+                    <form method="post" action="/delete/<%= user.id %>" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <!-- Button to Navigate to Add User Form -->
+    <a href="/add">
+        <button>Add User</button>
+    </a>
+</body>
+</html>

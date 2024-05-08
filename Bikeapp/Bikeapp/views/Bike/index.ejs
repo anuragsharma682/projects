@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav  style="background-color: #0077b6; display: flex; ">
+        <div  style="display: flex;">
+          <a  href="/bike">Shopping App</a>
+          <div  id="navbarScroll">
+            <ul  style="display: flex; gap: 30px;">
+              <li >
+                <a  aria-current="page" href="#">Home</a>
+              </li>
+              <li >
+                <a  href="/bike/new">New</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <h1>All the Bikes</h1>
+    <div style="display: flex;">
+        <% for(let item of allbikes){ %>
+            <div style="border: 2px solid black; width: 15rem; padding-left: 2rem; margin-left: 20px;"> 
+                <h1>
+                    <%=item.Company%>
+                </h1>
+                <h3>
+                    <%=item.price%>
+                </h3>
+                <p>
+                    <%=item.Mileage%>
+                </p>
+
+                <p>
+                    <%=item.Power%>
+                </p>
+                <a href="/bike/<%= item.id %>" class="btn btn-primary">View bike</a>
+                <br><br>
+            </div>
+            <% } %>
+    </div>
+</body>
+
+</html>

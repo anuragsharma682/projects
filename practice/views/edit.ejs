@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/formStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="main">
+
+        <% console.log(item.fabric); %>
+
+        <form method="post" action="/shirts/<%= item.id %>/edit">
+            <label for="fabric">fabric</label>
+            <input type="text" name="fabric"required="true" value="<%= item.fabric %>">
+            <label for="size">size</label>
+            <input type="number" name="size" value="<%= item.size %>">
+            <label for="pattern">pattern</label>
+            <input type="text" name="pattern" value="<%= item.pattern %>">
+            <label for="shirtColor">shirtColor</label>
+            <input type="text" name="shirtColor" value="<%= item.shirtColor %>" readonly="true">
+            <label for="fabric">price</label>
+            <input type="number" name="price" value="<%= item.price %>">
+            <button>submit</button>
+
+        </form>
+
+
+    </div>
+
+
+</body>
+</html>
